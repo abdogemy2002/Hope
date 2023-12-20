@@ -31,81 +31,7 @@ document.querySelector(".blogbt3").onclick = function () {
 };
 // End blog
 
-// Start mission
-var x2 = document.getElementById("mission1");
-var y2 = document.getElementById("mission2");
-var z2 = document.getElementById("mission3");
-var a2 = document.getElementById("mission4");
-var b2 = document.getElementById("mission5");
-var c2 = document.getElementById("mission6");
-document.querySelector(".missionbt1").onclick = function () {
-  if (x2.style.display == "block") {
-    document.getElementById("mission1").style.display = "none";
-    document.querySelector(".missionbt1").innerHTML = "read more";
-  } else {
-    document.getElementById("mission1").style.display = "block";
-    document.querySelector(".missionbt1").innerHTML = "read less";
-  }
-};
-document.querySelector(".missionbt2").onclick = function () {
-  if (y2.style.display == "block") {
-    document.getElementById("mission2").style.display = "none";
-    document.querySelector(".missionbt2").innerHTML = "read more";
-  } else {
-    document.getElementById("mission2").style.display = "block";
-    document.querySelector(".missionbt2").innerHTML = "read less";
-  }
-};
-document.querySelector(".missionbt3").onclick = function () {
-  if (z2.style.display == "block") {
-    document.getElementById("mission3").style.display = "none";
-    document.querySelector(".missionbt3").innerHTML = "read more";
-  } else {
-    document.getElementById("mission3").style.display = "block";
-    document.querySelector(".missionbt3").innerHTML = "read less";
-  }
-};
-document.querySelector(".missionbt4").onclick = function () {
-  if (a2.style.display == "block") {
-    document.getElementById("mission4").style.display = "none";
-    document.querySelector(".missionbt4").innerHTML = "read more";
-  } else {
-    document.getElementById("mission4").style.display = "block";
-    document.querySelector(".missionbt4").innerHTML = "read less";
-  }
-};
-document.querySelector(".missionbt5").onclick = function () {
-  if (b2.style.display == "block") {
-    document.getElementById("mission5").style.display = "none";
-    document.querySelector(".missionbt5").innerHTML = "read more";
-  } else {
-    document.getElementById("mission5").style.display = "block";
-    document.querySelector(".missionbt5").innerHTML = "read less";
-  }
-};
-document.querySelector(".missionbt6").onclick = function () {
-  if (c2.style.display == "block") {
-    document.getElementById("mission6").style.display = "none";
-    document.querySelector(".missionbt6").innerHTML = "read more";
-  } else {
-    document.getElementById("mission6").style.display = "block";
-    document.querySelector(".missionbt6").innerHTML = "read less";
-  }
-};
-// End mission
 
-// Start Event
-var x3 = document.getElementById("event1");
-document.querySelector(".eventbt1").onclick = function () {
-  if (x3.style.display == "block") {
-    document.getElementById("event1").style.display = "none";
-    document.querySelector(".eventbt1").innerHTML = "د";
-  } else {
-    document.getElementById("event1").style.display = "block";
-    document.querySelector(".eventbt1").innerHTML = "read less";
-  }
-};
-// End Event
 
 // Start Testimonials
 document.querySelector(".testbt1").onclick = function () {
@@ -384,21 +310,21 @@ const validateInputs = () => {
   } else {
     return true;
   }
-  // if (passwordValue === "") {
-  //   setError(password, "Password is required");
-  // } else if (passwordValue.length < 8) {
-  //   setError(password, "Password must be at least 8 character.");
-  // } else {
-  //   setSuccess(password);
-  // }
+  if (passwordValue === "") {
+    setError(password, "Password is required");
+  } else if (passwordValue.length < 8) {
+    setError(password, "Password must be at least 8 character.");
+  } else {
+    setSuccess(password);
+  }
 
-  // if (password2Value === "") {
-  //   setError(password2, "Please confirm your password");
-  // } else if (password2Value !== passwordValue) {
-  //   setError(password2, "Passwords doesn't match");
-  // } else {
-  //   setSuccess(password2);
-  // }
+  if (password2Value === "") {
+    setError(password2, "Please confirm your password");
+  } else if (password2Value !== passwordValue) {
+    setError(password2, "Passwords doesn't match");
+  } else {
+    setSuccess(password2);
+  }
 };
 
 const validateInputs2 = () => {
@@ -443,3 +369,21 @@ const validateInputs2 = () => {
     return false;
   }
 };
+
+window.addEventListener("scroll", function () {
+  var icon = document.getElementById("medhat");
+  if (window.pageYOffset > 50) {
+    icon.style.display = "block";
+  } else {
+    icon.style.display = "none";
+  }
+});
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function topFunction() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
